@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
-from sample.flows import SampleFlow
+from example.flows import SampleFlow, OtherFlow
 
 urlpatterns = patterns('',
-    url(r'^flow/', include(SampleFlow().urls), name="flow"),
+    url(r'^first/', include(SampleFlow().urls), name="first"),
+    url(r'^second/', include(OtherFlow().urls), name="second"),
 )

@@ -1,5 +1,10 @@
 from django import template
+from django.core.urlresolvers import reverse
 register = template.Library()
+
+@register.simple_tag
+def webflow_step_url(step_name):
+    return reverse('webflow_step', kwargs={'step_name':step_name})
 
 @register.tag(name="webflow_management")
 def webflow_management(parser, token):

@@ -2,9 +2,9 @@ from django.views.generic.base import View, classonlymethod, update_wrapper
 from django.template.loader import add_to_builtins
 from django.http import Http404
 
-from sample.views import *
+from example.views import *
 
-add_to_builtins('sample.templatetags.webflow')
+add_to_builtins('example.templatetags.webflow')
 
 class FlowView(View):
 
@@ -85,7 +85,16 @@ class SampleFlow(object):
         from django.conf.urls.defaults import patterns, url
 
         urlpatterns = patterns('',
-            url(r'^(?P<step_name>.+)?$', FlowView.as_view(self.steps)),
+            url(r'^(?P<step_name>.+)?$', FlowView.as_view(self.steps), name='webflow_step'),
         )
 
         return urlpatterns
+
+class OtherFlow(SampleFlow):
+    steps = (
+        ("a", A),
+        ("b", B),
+        ("c", C),
+        ("d", D),
+    )
+

@@ -19,7 +19,7 @@
 
     <ul>
     {% for step in webflow_steps %}
-        <li>{{ step }}</li>
+        <li><a href="{% webflow_step_url step %}">{{ step }}</a></li>
     {% endfor %}
     </ul>
 </div>
