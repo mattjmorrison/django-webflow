@@ -1,0 +1,11 @@
+!!!!!!This is not ready for production use!!!!!!!
+
+Django Webflow is a project to help manage "flows" of web
+pages.
+
+A "flow" is a sequence of steps that will happen in a predefined
+order.  Django Webflow provides an easy to use, simple, light weight
+way to organize views into logical progressions.
+
+
+
