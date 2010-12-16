@@ -1,0 +1,30 @@
+<div>
+    {% webflow_management %}
+</div>
+
+<div>
+    {% current_webflow_step %}
+</div>
+
+<div>
+    {% next_webflow_step %}
+</div>
+
+<div>
+    {% prior_webflow_step %}
+</div>
+
+<div>
+    {% webflow_step_list as webflow_steps %}
+
+    <ul>
+    {% for step in webflow_steps %}
+        <li><a href="{% url second:webflow_step step %}">{{ step }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div style="border:1px solid;">
+<div>This is the page content</div>
+{% block content %}{% endblock %}
+</div>
